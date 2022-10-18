@@ -6,9 +6,9 @@ const app = express()
 
 
 app.use(express.json())
+app.use(express.static(path.join(__dirname, "public")))
 
 app.get("/notes", (request, response) => {
-    console.log(request)
     response.sendFile(path.join(__dirname, "public/notes.html"))
 })
 // /notes is a route
