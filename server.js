@@ -16,8 +16,8 @@ app.get("/api/notes", (request, response) => {
     const data = fs.readFileSync(path.join(__dirname, "db/db.json"), {
         encoding: "utf8"
     })
-    console.log(data)
-    response.json(data)
+    console.log(JSON.parse(data))
+    response.json(JSON.parse(data))
 })
 
 app.post("/api/notes", (request, response) => {
